@@ -1,8 +1,8 @@
-<img src="docs/brand/logo-icon.svg" width="64" alt="Kantieri logo">
+<img src="docs/brand/logo-icon.svg" width="64" alt="SiteTrail logo">
 
-# Kantieri
+# SiteTrail
 
-**Kantieri turns a site manager's daily photos and voice notes into dated site reports and client-approved changes, so small builders have proof instead of arguments.**
+**SiteTrail turns a site manager's daily photos and voice notes into dated site reports and client-approved changes, so small builders have proof instead of arguments.**
 
 For small construction firms and architects in Kosovo and North Macedonia.
 

@@ -1,23 +1,25 @@
-# Kantieri — Brand book v1
+# SiteTrail — Brand book v1
 
-![Kantieri brand board](brand/brand-board.svg)
+![SiteTrail brand board](brand/brand-board.svg)
 
 ## Name
-**Kantieri**: "the building site" in Albanian. The same word ("kantier") is used on sites in North Macedonia, so builders in both countries recognise it immediately.
+**SiteTrail.** In English, a "paper trail" is written proof of what happened. SiteTrail is the trail of every day on site: every photo, every voice note and every approved change in one record you can show when there's a dispute.
+
+**Why an English name:** it's neutral. Albanian and Macedonian speakers understand it equally, and neither feels it's "not for them". Earlier options were dropped for that reason: *Kantieri* isn't the word Kosovo builders use (they say "teren" or "punishte") and means nothing in Macedonian, and invented names like *Sitero* sounded generic.
 
 | Check | Result (14 Nov 2026) |
 |---|---|
-| kantieri.com | ❌ Taken |
-| **kantieri.app** | ✅ Looks free (no DNS record). Register it to confirm |
-| getkantieri.com | ✅ Looks free (backup) |
-| Instagram **@kantieri.app** | ⚠️ Check by hand on instagram.com/kantieri.app (backup: @kantieri.ks) |
+| sitetrail.com | ❌ Taken |
+| **sitetrail.app** | ✅ Looks free (no DNS record). Register it to confirm |
+| Instagram **@sitetrail.app** | ⚠️ Check by hand on instagram.com/sitetrail.app (backup: @sitetrail.ks) |
 
 ## Tagline
-- **Albanian:** *Dita e kantierit, e dokumentuar.*
-- **English:** *Your site, on the record.*
+- **Albanian:** *Çdo ditë në teren, e dokumentuar.*
+- **English:** *Every day on site, on the record.*
+- **For sales:** *Klienti aprovon, ti ke provën.* ("The client approves, you have the proof.")
 
 ## Logo
-A house outline with a check mark inside: the building plus "approved / on the record". Orange rounded square, so it's visible as a phone icon.
+Two dots leading into a check mark: the **trail** of days on site that ends in **approved**. It sits on an orange rounded square, so it works as a phone app icon. In the wordmark, "Site" is in the text colour and "Trail" is in orange.
 
 | On light | On dark | Icon only |
 |---|---|---|
@@ -42,7 +44,7 @@ Orange is for actions only, never for long text.
 - **Inter** (Regular 400 / Semibold 600): all body text and the app interface. Very readable on small phone screens and supports Albanian (ë, ç) and Macedonian Cyrillic. [Google Fonts](https://fonts.google.com/specimen/Inter)
 
 ## Tone of voice: **Direct · Practical · Trustworthy**
-We talk like a good site engineer: short sentences, no fancy words, always about the work.
+We talk like a good site engineer: short sentences, no fancy words, always about the work. In the app we use the words builders use: **"teren"**, not "kantier".
 
 - ✅ **Sounds like us:** "Record today in two minutes. Your client approves the change, and you have proof."
 - ❌ **Doesn't sound like us:** "Unlock synergies with our revolutionary AI-powered digital transformation platform for the construction ecosystem!"

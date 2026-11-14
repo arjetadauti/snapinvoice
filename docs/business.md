@@ -1,6 +1,6 @@
-# Kantieri — Business (parts 1–4)
+# SiteTrail — Business (parts 1–4)
 
-> **Kantieri** turns a site manager's daily photos and voice notes into dated site reports and client-approved changes, so small builders have proof instead of arguments.
+> **SiteTrail** turns a site manager's daily photos and voice notes into dated site reports and client-approved changes, so small builders have proof instead of arguments.
 
 ---
 
@@ -47,6 +47,8 @@ Small construction firms and architects in Kosovo and North Macedonia lose money
 - What surprised me:
 
 **What the interviews changed in my thinking:** _one or two sentences_
+
+**Observation before the interviews:** architects and engineers in Kosovo say *"jam në teren sot"* ("I'm in the field today"), not "kantier". Macedonian speakers say *"на терен сум"* in the same way. So the product talks about **"teren"** in Albanian and Macedonian, and the brand name is neutral English (SiteTrail) so it works in both countries.
 
 ---
 
@@ -120,7 +122,7 @@ Prices were checked in November 2026 from public listings and may change. Confir
 
 The weakest numbers are the 40% and 50% assumptions and the architecture-studio count. I'll test them in interviews by asking "how many people work for you and how many sites do you run at once?"
 
-### Why a customer would choose Kantieri
+### Why a customer would choose SiteTrail
 **Because it's the only site diary in Albanian and Macedonian that is as easy as sending a WhatsApp voice note, costs one flat price for the whole firm, and gives you the client's signed approval for every change.**
 
 ---
@@ -146,13 +148,13 @@ The weakest numbers are the 40% and 50% assumptions and the architecture-studio 
 | Plan | Price | For |
 |---|---|---|
 | **Free first project** | €0 for 30 days, 1 site | So they can try it on a real project |
-| **Kantieri** | **€39/month** per firm, up to 5 active sites, unlimited users | Most small builders |
-| **Kantieri Pro** | **€69/month**, unlimited sites, firm logo on the reports | Bigger firms and architecture studios |
+| **SiteTrail** | **€39/month** per firm, up to 5 active sites, unlimited users | Most small builders |
+| **SiteTrail Pro** | **€69/month**, unlimited sites, firm logo on the reports | Bigger firms and architecture studios |
 | **Yearly** | 2 months free | Cash up front |
 
 **Why monthly, flat per firm:**
 - Builders are afraid of paying "per user". Flat pricing means they invite everyone, including the client and the architect, and more users make the product more valuable.
-- €39 is much less than one dispute. If Kantieri saves a single argument about a €500 change, it pays for a year.
+- €39 is much less than one dispute. If SiteTrail saves a single argument about a €500 change, it pays for a year.
 - It's far below PlanRadar or Fieldwire for a 6-person team (~€150–500/month).
 
 ### Monthly costs (first 10–30 customers)
@@ -164,7 +166,7 @@ The weakest numbers are the 40% and 50% assumptions and the architecture-studio 
 | AI: speech-to-text + structuring | ~€10–20 | ~30 sites × 1 min/day of voice is cheap |
 | Email (reports, invites) | €0 | Free tier, e.g. Resend |
 | WhatsApp/SMS (approval links) | ~€10–20 | Pay per message. Start with email + link to keep it low |
-| Domain (kantieri.app) | ~€1.5 | ~€15–20 per year |
+| Domain (sitetrail.app) | ~€1.5 | ~€15–20 per year |
 | **Total** | **~€70–90/month** | Break-even at **3 paying firms** |
 
 These are estimates for planning; I'll check real prices when I choose the tools.
@@ -174,4 +176,4 @@ These are estimates for planning; I'll check real prices when I choose the tools
 2. **Walking onto sites:** visit 20 active sites in Prishtina and nearby cities, talk to the site manager, offer a free first project (target: 3 firms).
 3. **Building material stores:** ask the owners of 5 stores to introduce me to their regular builders (target: 2 firms).
 4. **Facebook and Instagram groups** for architecture and construction in Kosovo and North Macedonia, with a short video of a voice note turning into a report (target: 1–2 firms).
-5. **Referrals from clients:** every weekly report sent to a client says "Made with Kantieri", so the client becomes a salesperson for their next build (target: 1 firm).
+5. **Referrals from clients:** every weekly report sent to a client says "Made with SiteTrail", so the client becomes a salesperson for their next build (target: 1 firm).

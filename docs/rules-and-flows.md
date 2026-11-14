@@ -1,4 +1,4 @@
-# Kantieri — Business rules and flows (part 6)
+# SiteTrail — Business rules and flows (part 6)
 
 ## Users and roles
 
@@ -8,14 +8,14 @@
 | **Site manager** | Foreman or engineer on site | Add daily entries (photos, voice, text) on their projects, create change requests, mark problems | See projects they are not assigned to, delete entries, manage billing |
 | **Architect** | The project architect (in or outside the firm) | See the project timeline, add instructions and drawings, comment on entries, create change requests | Edit or delete other people's entries, manage billing |
 | **Client** | The person or investor paying for the building | See the timeline and weekly reports of **their** project, approve or reject change requests, comment | Edit entries, see other projects, see internal notes |
-| **Kantieri admin** | Me / the Kantieri team | Support, fix accounts, see usage numbers | Approve changes for anyone, read projects without the owner's permission |
+| **SiteTrail admin** | Me / the SiteTrail team | Support, fix accounts, see usage numbers | Approve changes for anyone, read projects without the owner's permission |
 
 ---
 
 ## The three most important flows
 
 ### Flow 1: Sign up and start a project
-1. The firm owner opens kantieri.app and signs up with name, phone number, email and firm name.
+1. The firm owner opens sitetrail.app and signs up with name, phone number, email and firm name.
 2. They confirm their email (or phone code).
 3. They create the first project: name, address, client name, start date, planned end date.
 4. They invite the site manager by phone or email (link by WhatsApp/SMS/email).
@@ -30,7 +30,7 @@
 4. AI turns the voice note into a structured entry: **work done, workers on site, materials delivered, problems/delays, weather, change requests mentioned**.
 5. The site manager checks the draft, fixes anything wrong and taps **Save**.
 6. The entry is saved with date, time and author, and appears on the project timeline.
-7. If the voice note mentioned a client change, Kantieri suggests **"Create a change request?"** (Flow 3).
+7. If the voice note mentioned a client change, SiteTrail suggests **"Create a change request?"** (Flow 3).
 8. Every Friday, the client automatically gets a weekly report (link + PDF) built from that week's entries.
 
 ### Flow 3: Change request and client approval
@@ -40,7 +40,7 @@
 4. The client taps **Approve** or **Reject** (with an optional comment).
 5. The decision is saved with date, time and the client's name, and everyone on the project is notified.
 6. Approved changes are added to the project's **change list** with a running total of extra cost and extra days.
-7. If the client doesn't answer within 3 days, Kantieri sends one reminder. After 7 days the request shows as **No answer**, and the owner decides what to do.
+7. If the client doesn't answer within 3 days, SiteTrail sends one reminder. After 7 days the request shows as **No answer**, and the owner decides what to do.
 
 ---
 
