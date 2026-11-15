@@ -1,10 +1,10 @@
-<img src="docs/brand/logo-icon.svg" width="64" alt="SiteTrail logo">
+<img src="docs/brand/logo-icon.svg" width="64" alt="SnapFaktura logo">
 
-# SiteTrail
+# SnapFaktura
 
-**SiteTrail turns a site manager's daily photos and voice notes into dated site reports and client-approved changes, so small builders have proof instead of arguments.**
+**SnapFaktura lets small businesses photograph their invoices with a phone, and AI turns them into ready-to-import data for their accountant, so accountants stop typing invoices by hand.**
 
-For small construction firms and architects in Kosovo and North Macedonia.
+For accounting offices and their small-business clients in Kosovo and North Macedonia.
 
 ## Docs
 - [Business: problem, big picture, market, model](docs/business.md)

@@ -1,73 +1,69 @@
-# SiteTrail — Business rules and flows (part 6)
+# SnapFaktura — Business rules and flows (part 6)
 
 ## Users and roles
 
 | Role | Who | Can do | Cannot do |
 |---|---|---|---|
-| **Firm owner** | Owner of the construction firm or architecture studio; the paying customer | Create the firm account, create and close projects, invite and remove people, see all projects, manage the subscription, edit any entry within the edit window | Change an approval the client already gave |
-| **Site manager** | Foreman or engineer on site | Add daily entries (photos, voice, text) on their projects, create change requests, mark problems | See projects they are not assigned to, delete entries, manage billing |
-| **Architect** | The project architect (in or outside the firm) | See the project timeline, add instructions and drawings, comment on entries, create change requests | Edit or delete other people's entries, manage billing |
-| **Client** | The person or investor paying for the building | See the timeline and weekly reports of **their** project, approve or reject change requests, comment | Edit entries, see other projects, see internal notes |
-| **SiteTrail admin** | Me / the SiteTrail team | Support, fix accounts, see usage numbers | Approve changes for anyone, read projects without the owner's permission |
+| **Office owner** | Owner of the accounting office; the paying customer | Create the office account, add accountants, add client businesses, see everything, review and export, manage the subscription | Change a month that is already exported and locked (without unlocking it, which is logged) |
+| **Accountant** | Staff in the office | See the client businesses assigned to them, review and correct documents, export months | See clients not assigned to them, manage billing, delete the office |
+| **Business client** | The small business that the office keeps books for | Upload invoice and receipt photos or PDFs through their link, see what they've uploaded and its status, answer the accountant's questions on a document | See or change the extracted numbers, see other businesses, export anything |
+| **SnapFaktura admin** | Me / the SnapFaktura team | Support, fix accounts, see usage numbers | Open invoices or client data without the office owner's permission |
 
 ---
 
 ## The three most important flows
 
-### Flow 1: Sign up and start a project
-1. The firm owner opens sitetrail.app and signs up with name, phone number, email and firm name.
-2. They confirm their email (or phone code).
-3. They create the first project: name, address, client name, start date, planned end date.
-4. They invite the site manager by phone or email (link by WhatsApp/SMS/email).
-5. They invite the client, and optionally the architect, by link.
-6. The free 30-day first project starts.
-7. On day 25 the owner gets a reminder to choose a plan. If they don't pay by day 30, the project becomes read-only (nothing is deleted).
+### Flow 1: Sign up and add a client business
+1. The office owner opens snapfaktura.com and signs up with name, email, phone and office name.
+2. They confirm their email.
+3. They choose their accounting program (e.g. Financa 5, Alpha, Bilanc, other / Excel), which sets the export format.
+4. They add a client business: business name, tax number (NUI/ЕДБ), VAT registered yes/no, contact phone/email.
+5. SnapFaktura creates a **personal upload link** for that business, and the owner sends it by email, Viber or WhatsApp (or shows a QR code in the office).
+6. The free 30-day trial starts (up to 200 documents).
+7. On day 25 the owner gets a reminder to choose a plan. If they don't pay by day 30, uploads stop, but existing data stays and can still be exported.
 
-### Flow 2: Record the day on site (daily entry)
-1. At the end of the day, the site manager opens the project on their phone.
-2. They take 1–10 photos.
-3. They hold the microphone button and speak for up to 2 minutes (Albanian, Macedonian or English).
-4. AI turns the voice note into a structured entry: **work done, workers on site, materials delivered, problems/delays, weather, change requests mentioned**.
-5. The site manager checks the draft, fixes anything wrong and taps **Save**.
-6. The entry is saved with date, time and author, and appears on the project timeline.
-7. If the voice note mentioned a client change, SiteTrail suggests **"Create a change request?"** (Flow 3).
-8. Every Friday, the client automatically gets a weekly report (link + PDF) built from that week's entries.
+### Flow 2: The business uploads an invoice
+1. The business owner opens their upload link on their phone (no password: the link is personal and can be reset by the accountant).
+2. They tap **Take photo** (or choose a PDF/photo from the phone). Several pages or documents can be added at once.
+3. They see a preview, can retake a blurry photo, and tap **Send**.
+4. SnapFaktura confirms "Received: 3 documents for November", and the documents go to the accountant's queue for that business and month.
+5. Around the 3rd of every month, the business gets an automatic reminder: "Send the rest of last month's invoices to your accountant."
 
-### Flow 3: Change request and client approval
-1. The site manager, architect or owner creates a change request: what changes, why, photos/drawing, **extra cost (€)** and **extra days**.
-2. The owner reviews it and taps **Send to client** (the site manager cannot send it alone).
-3. The client gets a link by email/WhatsApp, opens the change, and sees the description, cost and delay.
-4. The client taps **Approve** or **Reject** (with an optional comment).
-5. The decision is saved with date, time and the client's name, and everyone on the project is notified.
-6. Approved changes are added to the project's **change list** with a running total of extra cost and extra days.
-7. If the client doesn't answer within 3 days, SiteTrail sends one reminder. After 7 days the request shows as **No answer**, and the owner decides what to do.
+### Flow 3: AI reads it, the accountant checks and exports
+1. Within a minute of upload, AI reads each document: **supplier name, supplier tax number, invoice number, date, net amount, VAT rate(s), VAT amount, total, currency, and document type** (invoice, receipt/fiscal coupon, credit note).
+2. Each field gets a confidence level. Fields the AI isn't sure about are **highlighted in orange**.
+3. The accountant opens the business and month, and sees the photo on the left and the fields on the right.
+4. They correct anything wrong and tap **Approve** (or press Enter to move fast through the list).
+5. If something is missing or unreadable, they tap **Ask client**, and the business gets a message about that document.
+6. When all documents in the month are approved, the accountant taps **Export month**, and gets an Excel/CSV in their program's import format.
+7. The month is then **locked** for that business, so the exported numbers can't change by accident.
 
 ---
 
 ## Business rules
 
-1. **A project needs one owner and one client.** It can't start without a client name and contact, because approvals are the main point of the product.
-2. **Entries can be edited only for 24 hours** after they are saved. After that they are locked, so the timeline can be trusted as proof. Corrections are added as a new note linked to the old entry.
-3. **Entries are never deleted** by site managers. Only the firm owner can hide an entry, and the hide is logged with who and when.
-4. **Only one entry per site per day** per site manager. More photos or notes on the same day are added to that day's entry.
-5. **A change request must have a cost and a delay**, even if both are zero ("€0, 0 days" is a valid, explicit answer).
-6. **Only the firm owner can send a change request to the client.** Site managers and architects can prepare it, but the owner approves the price.
-7. **A client's approval can't be changed.** If the client changes their mind, a new change request is created that reverses the first one.
-8. **Clients see only their own project** and never see entries marked "internal" (e.g. problems with workers or suppliers).
-9. **The first project is free for 30 days.** After that, without a paid plan, projects become read-only. Data is kept for 12 months, and the owner can export everything as PDF at any time.
-10. **The subscription is per firm, not per user.** The basic plan allows up to 5 active projects. A closed project doesn't count toward the limit.
-11. **Cancelling stops the next payment**, and the account stays active until the end of the paid month. No refunds for partial months.
-12. **Voice notes are kept for 90 days**, and the text transcript is kept for as long as the project exists.
+1. **Every document belongs to exactly one business and one month.** The month comes from the invoice date, and the accountant can move it (e.g. a late invoice booked in the next month).
+2. **Nothing is exported without a human check.** Only documents an accountant has approved go into an export. The AI never posts anything directly into the books.
+3. **Uncertain fields must be looked at.** A document with any orange (low-confidence) field can't be approved until the accountant confirms or corrects that field.
+4. **The maths must add up.** If net + VAT ≠ total (more than €0.02 off), the document is flagged and can't be approved until fixed.
+5. **Duplicates are blocked.** If a document has the same supplier tax number, invoice number and total as one already uploaded for that business, it's marked "possible duplicate" and isn't exported twice.
+6. **A month is locked after export.** Changes need the office owner to unlock it. Every unlock is logged with who, when and why.
+7. **Businesses only see their own uploads** and never the extracted numbers, other businesses or the office's notes.
+8. **Original photos are never edited or deleted by the AI.** Corrections change only the extracted data; the original image stays attached to the document.
+9. **Pricing counts documents, not pages.** A three-page invoice is one document. Unused documents don't roll over to the next month.
+10. **Data belongs to the accounting office.** It can export everything (data + original images) at any time. If the subscription ends, data is kept for 12 months in read-only mode, then deleted after a warning by email. Keeping documents for the legally required period is still the office's responsibility.
+11. **Cancelling stops the next payment.** The account stays active until the end of the paid month. No refunds for partial months.
+12. **Upload links can be reset.** If a business link is shared by mistake, the accountant resets it and the old link stops working immediately.
 
 ---
 
 ## What version 1 will NOT do
-- No **native iOS/Android app**: v1 is a mobile web app that works in the phone browser.
-- No **WhatsApp bot** for entries yet: that's version 2.
-- No **plans/drawings markup** (drawing on PDFs like PlanRadar).
-- No **budgets, invoices or accounting**: only the cost of change requests.
-- No **worker time tracking or payroll**.
-- No **scheduling / Gantt charts**.
-- No **offline mode**: it needs mobile internet to save.
-- No **legal e-signature**: approval is a dated, logged tap, not a qualified electronic signature.
-- No **languages other than Albanian, Macedonian and English**.
+- No **native iOS/Android app**: the business uploads through a mobile web link; the accountant uses a web browser.
+- No **direct integration (API) with accounting programs**: v1 exports Excel/CSV files that the program imports.
+- No **WhatsApp or email-forward upload** yet: that's version 2.
+- No **bookkeeping itself**: no chart of accounts, no automatic posting to accounts, no VAT returns. The accountant still does the accounting.
+- No **line items** (each product on the invoice): v1 reads header totals and VAT only.
+- No **bank statements**.
+- No **e-invoice XML import** yet: planned for when North Macedonia's e-invoicing becomes mandatory.
+- No **payments to suppliers**.
+- No **languages other than Albanian, Macedonian and English** for the interface.

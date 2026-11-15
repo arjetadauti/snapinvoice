@@ -1,82 +1,81 @@
-# SiteTrail — Business (parts 1–4)
+# SnapFaktura — Business (parts 1–4)
 
-> **SiteTrail** turns a site manager's daily photos and voice notes into dated site reports and client-approved changes, so small builders have proof instead of arguments.
+> **SnapFaktura** lets small businesses photograph their invoices with a phone, and AI turns them into ready-to-import data for their accountant, so accountants stop typing invoices by hand.
 
 ---
 
 ## 1. The problem
 
 **One sentence:**
-Small construction firms and architects in Kosovo and North Macedonia lose money, days and client trust every time a client disputes a change or a delay, because what happens on site lives on paper, in WhatsApp groups and in people's heads.
+Accountants in Kosovo and North Macedonia who keep the books for small businesses lose whole working days every month at deadline time, typing hundreds of paper invoices and receipts by hand from the bags their clients bring in, which costs them hours they can't bill, late nights before VAT deadlines, and typing mistakes they have to fix later.
 
 **When it hurts**
-- At the end of a project, when the client refuses to pay for "extra" work they asked for by phone.
-- When the project is late and nobody can prove why (weather, late materials, client changes).
-- When the architect finds out weeks later that something was built differently from the drawings.
-- Every week, when the client calls asking "how is it going?" and someone has to send photos by hand.
+- In the first days of every month, when clients bring a bag or a box of invoices, often late and incomplete.
+- Right before the monthly VAT and tax deadlines, when everything has to be entered at once.
+- When a typing mistake (wrong amount, wrong VAT, wrong supplier number) has to be found and fixed later.
+- When an accountant can't take on more clients because the data entry has no room left.
 
 **What it costs today**
-- **Money:** unpaid change work and the cost of rebuilding things done wrong.
-- **Time:** hours spent scrolling through WhatsApp, calling people and rebuilding what happened.
-- **Stress:** arguments with clients and damaged relationships that cost the next job.
+- **Time:** if one invoice takes ~1–2 minutes to type, 1,000 invoices a month means **~17–33 hours**, or 2–4 full working days. _(Estimate, to confirm in the interviews.)_
+- **Money:** those hours could be spent on more clients or better-paid advisory work.
+- **Stress:** late nights before deadlines, chasing clients for missing documents, and the risk of fines for the client if something is wrong.
 
 ### Interviews (in their own words)
 
 > ⚠️ **TO FILL IN WITH REAL INTERVIEWS. Do not hand in with placeholder text.**
 
-**Interview 1: Architect**
-- Who: _role, size of studio, city_
+**Interview 1: Accountant**
+- Who: _role, size of office, number of client businesses, city_
 - Date and format: _in person / phone / voice messages_
 - Quotes, word for word (Albanian is fine, add an English translation):
   - "…"
   - "…"
   - "…"
+- How many invoices a month, and how long one takes to enter:
+- Which accounting program they use:
 - Biggest pain:
-- Money or time lost (number):
 - What surprised me:
 
-**Interview 2: Contractor / site manager**
-- Who: _role, size of firm, city_
+**Interview 2: Small business owner (the accountant's client) or a second accountant**
+- Who:
 - Date and format:
 - Quotes, word for word:
   - "…"
   - "…"
   - "…"
+- How they give documents to the accountant today:
 - Biggest pain:
-- Money or time lost (number):
 - What surprised me:
 
 **What the interviews changed in my thinking:** _one or two sentences_
-
-**Observation before the interviews:** architects and engineers in Kosovo say *"jam në teren sot"* ("I'm in the field today"), not "kantier". Macedonian speakers say *"на терен сум"* in the same way. So the product talks about **"teren"** in Albanian and Macedonian, and the brand name is neutral English (SiteTrail) so it works in both countries.
 
 ---
 
 ## 2. The big picture
 
 **Product in one sentence a stranger understands:**
-An app where builders record each day on site with photos and a voice note, and their clients confirm every change with one tap.
+Businesses take a photo of each invoice, and their accountant gets the supplier, date, amounts and VAT already typed, ready for their accounting program.
 
 | | Who |
 |---|---|
-| **Main user** | The site manager / foreman: records the day in under 2 minutes |
-| **Pays** | The owner of the construction firm (or the architecture studio supervising the build) |
-| **Also uses it, free** | The client / investor: reads the reports, confirms the changes. The architect: sends instructions, follows progress |
+| **Pays** | The accountant or accounting office: they save the hours |
+| **Main user** | The accountant: reviews what AI read and exports it |
+| **Also uses it, free** | The small business (the accountant's client): photographs invoices with their phone instead of collecting them in a bag |
 
 **Why now**
-- Construction is one of the biggest and busiest sectors in Kosovo and North Macedonia, with a lot of it paid for by diaspora clients who live abroad and can't see the site.
-- Speech-to-text AI is now good and cheap enough to understand Albanian and Macedonian voice notes, so site managers don't have to type.
-- Everyone on site already uses WhatsApp/Viber and a smartphone camera, so the habit is already there.
+- **AI can now read invoices** in Albanian, Macedonian (Cyrillic) and English, including photos taken on a phone, at a cost of fractions of a cent per invoice. A few years ago this needed expensive, rigid OCR templates.
+- **Tax systems are going digital.** Kosovo is moving from fiscal devices to Electronic Fiscal Software with fiscal QR codes ([fiscal-requirements.com](https://www.fiscal-requirements.com/countries/43-jurisdiction-of-kosovo)), and North Macedonia is preparing mandatory e-invoicing (draft law, phased from 2027) ([fiscal-requirements.com](https://www.fiscal-requirements.com/news/5054-north-macedonia-introduces-mandatory-real-time-e-invoicing-e-faktura)). Accountants know they must change how they work, so this is the moment they're open to new tools.
+- **Accountants are overloaded.** More registered businesses means more bookkeeping with the same number of people.
 
 ### Three ways to solve the same problem
 
 | Option | How it works | Good | Bad |
 |---|---|---|---|
-| **A. Service** | Someone visits each site weekly, takes photos and writes the report | No tech needed from the builder | Expensive, slow, doesn't scale, nobody records changes between visits |
-| **B. WhatsApp bot only** | The site manager sends photos and a voice note to a number, and a report comes back | Zero learning, works on any phone | Hard to give the client a clean history and approve button. You depend on Meta's rules |
-| **C. Web app + WhatsApp entry (chosen)** | Entries come in by a simple mobile web app (and later WhatsApp). The owner, client and architect see one clean project timeline with approvals | Easy capture plus a real record that holds up in a dispute | More to build than a bot |
+| **A. Data-entry service** | A team in Prishtina types invoices for accountants, paid per document | No tech needed from anyone, works tomorrow | Low margins, depends on hiring people, slow at deadline peaks, doesn't scale |
+| **B. WhatsApp bot only** | The business sends invoice photos to a WhatsApp number, and the accountant gets an Excel by email | Zero learning for the business | Hard to review, correct and organise per client and month. Depends on Meta's rules |
+| **C. Web app for accountants + phone upload for businesses (chosen)** | Each business gets a simple upload link on their phone. AI reads the invoices, and the accountant reviews and exports per client and month | Fast capture **and** a proper place to check, fix and export | More to build than a bot |
 
-**Why I chose C:** the value isn't the report, it's the **proof**: a dated, shared timeline and a client tap that says "I approved this change and its price." That needs a real place the client opens. Capture must feel as easy as WhatsApp, so version 1 is a phone-first web app with voice recording, and WhatsApp entry comes next.
+**Why I chose C:** accountants are responsible for the numbers, so they must be able to **see and check** what AI read before it goes into the books. That needs a real review screen organised by client and month. The business side stays as easy as WhatsApp: open a link, take a photo, done. WhatsApp upload is a good next step for version 2.
 
 ---
 
@@ -84,46 +83,50 @@ An app where builders record each day on site with photos and a voice note, and 
 
 ### Competitors
 
-Prices were checked in November 2026 from public listings and may change. Confirm before the hand-in.
+Prices were checked in November 2026 from public listings. Several aren't public or are sales-led, so confirm before the hand-in.
 
-| Competitor | Price | What it does well | Where it fails for a small Kosovo/MK builder | Link |
+| Competitor | Price | What it does well | Where it fails for an accountant in Kosovo/MK | Link |
 |---|---|---|---|---|
-| **PlanRadar** (Austria) | From ~€26/user/month; Starter ~€89 and Pro ~€129/user/month | Strong defect and site documentation on plans, used across Europe | Priced per user, so a 6-person team gets expensive fast; built for bigger firms; no Albanian | [planradar.com](https://www.planradar.com) |
-| **Fieldwire** (Hilti) | Free up to 5 users; Pro ~$39–54/user/month | Great task and plan management, good free tier | Task-oriented rather than diary-oriented, English-first, no client approval of changes | [fieldwire.com](https://www.fieldwire.com/pricing/) |
-| **Raken** (USA) | Not public; third-party listings show roughly $12–90/user/month | Made exactly for daily reports | US-focused, USD, English, aimed at US crews | [rakenapp.com](https://www.rakenapp.com) |
-| **Valoon** (Switzerland/Germany) | Not public; ask for a quote | WhatsApp-style chat and voice notes turned into reports, the closest to my idea | German/DACH market, no Albanian/Macedonian, priced for Western Europe | [valoon.chat](https://valoon.chat/en/) |
-| **Sifu** (new, AI) | Not public | Connects to WhatsApp and uses AI to draft daily reports | Early-stage and English-first, no local presence | [producthunt.com/products/sifu](https://www.producthunt.com/products/sifu) |
-| **Do nothing:** WhatsApp groups, a notebook, Excel, phone calls | €0 | Free, everyone already uses it, no training | No structure and no proof; messages get lost; the client never formally approves anything; nothing is searchable later | n/a |
+| **Dext Prepare** (UK) | Sales-led; per-client tiers for accounting firms (third-party listings show ~£165+/month for firms) | The market leader in receipt and invoice capture for accountants | Built for Xero/QuickBooks/Sage, not local programs; priced for UK firms; no Albanian/Macedonian support | [dext.com](https://dext.com) |
+| **Datamolino** (Slovakia) | ~$9–65/month depending on document volume (third-party listings) | Cheap, pay by volume, unlimited users | Integrates with Western programs, not Financa 5 / Alpha / Bilanc; English interface | [datamolino.com](https://www.datamolino.com) |
+| **Hubdoc** (Xero) | Included with Xero subscriptions | Free if you already use Xero | Only useful for Xero users, which local accountants mostly aren't | [hubdoc.com](https://www.hubdoc.com) |
+| **Odoo AI invoice capture** | Part of Odoo Enterprise (paid per user); Kosovo localisation module available | Full ERP with built-in AI scanning | Accountants would have to switch their whole program; expensive and complex for a small office | [odoo.com](https://www.odoo.com/app/accounting) |
+| **Do nothing:** typing by hand into Financa 5 / Alpha / Bilanc / Excel | €0 extra (just the accountant's time) | Familiar, full control, no new tool | Days of typing every month, mistakes, deadline stress, can't take more clients | n/a |
 
-**What this tells me:** the idea is proven (Valoon and Sifu are going in the same direction), so the market is real. But **nobody serves Albanian- and Macedonian-speaking builders, at local prices, with in-person setup**. My real competitor is the WhatsApp group.
+**Local accounting programs** (Financa 5, Alpha, Bilanc and others) aren't competitors yet. They're where my data goes, so SnapFaktura must export in a format they can import. **Risk:** they could add AI scanning themselves. My answer is to be faster and to work with *all* of them, not just one.
+
+**What this tells me:** the idea is proven abroad (Dext and Datamolino are real businesses), but **nobody does it for local invoices, local languages and local accounting programs at local prices.**
 
 ### How many possible customers?
 
 **Kosovo**
-1. The Kosovo Business Registration Agency (ARBK) lists **8,458** businesses registered for residential and non-residential building construction (NACE 41.20), of which **4,661 (55%) are active**. Source: [ARBK data via arbk.atlas-studio.eu](https://arbk.atlas-studio.eu/activity/4120).
-2. Many of these are one-person firms or firms with no running project. I assume **40%** have 5+ workers and run their own sites → **~1,860 firms**.
+1. The Kosovo Business Registration Agency (ARBK) lists **2,295** businesses registered under accounting, bookkeeping, auditing and tax consultancy (NACE 69.20), of which **1,792 (78%) are active**. Source: [ARBK data via arbk.atlas-studio.eu](https://arbk.atlas-studio.eu/activity/6920) _(third-party aggregator of ARBK data, to verify)_.
+2. Some are audit firms or big firms that don't do daily bookkeeping for small businesses. I assume **70%** keep books for small businesses → **~1,250 accounting offices**.
+3. For context: SCAAK, the main professional body, has about **7,000 members** ([IFAC](https://ifac.org/about-ifac/membership/profile/kosovo)), many of them working inside these offices or in companies.
 
 **North Macedonia**
-1. The Macedonian Chamber of Commerce reports **4,938** active construction companies (all of NACE section F, 2018 figure). Source: [mchamber.mk](https://mchamber.mk/en/home/grupacii/6).
-2. I assume about **50%** do building construction (the rest are civil engineering and specialised trades) → ~2,470.
-3. Same **40%** assumption for firms with 5+ workers that run sites → **~990 firms**.
+1. Accountants must be certified and registered with **ISOS** (Institute of Accountants and Certified Accountants). I didn't find a public count of registered accounting offices.
+2. My assumption: North Macedonia has a similar number of businesses to support as Kosovo, so **~1,500 active accounting offices**, of which 70% keep books for small businesses → **~1,050**. _To verify with the ISOS register._
 
-**Architecture studios that supervise construction** (second buyer)
-- I did not find an official number. My assumption is **~300 in Kosovo and ~300 in North Macedonia** → **~600**. _To verify with the chambers of architects._
-
-| | Firms |
+| | Accounting offices |
 |---|---|
-| Kosovo builders | ~1,860 |
-| North Macedonia builders | ~990 |
-| Architecture studios (assumption) | ~600 |
-| **Total possible customers** | **~3,450** |
+| Kosovo | ~1,250 |
+| North Macedonia (assumption) | ~1,050 |
+| **Total possible customers** | **~2,300** |
 
-**Realistic goal:** 3% in two years → **~100 paying firms × €39 = ~€3,900/month**.
+Each office serves many businesses (roughly 20–100 each), so ~2,300 offices reach **tens of thousands of small businesses** without selling to each one.
 
-The weakest numbers are the 40% and 50% assumptions and the architecture-studio count. I'll test them in interviews by asking "how many people work for you and how many sites do you run at once?"
+**Realistic goal:** 5% in two years → **~115 offices × ~€49 average = ~€5,600/month**.
 
-### Why a customer would choose SiteTrail
-**Because it's the only site diary in Albanian and Macedonian that is as easy as sending a WhatsApp voice note, costs one flat price for the whole firm, and gives you the client's signed approval for every change.**
+The weakest numbers are the North Macedonia estimate and the 70% assumption. I'll test them by asking accountants how many offices like theirs they know in their city.
+
+### The biggest risk: e-invoicing
+If North Macedonia's mandatory e-invoicing starts in 2027–2028, many **B2B invoices will arrive as digital files instead of paper**. That reduces the need for photos in the long term. My plan:
+- Receipts, fiscal coupons, foreign invoices and small suppliers will stay on paper for years, and Kosovo has no e-invoicing mandate yet.
+- SnapFaktura will also **import digital e-invoice files** (XML/PDF), so the accountant has one place for everything, paper or digital.
+
+### Why a customer would choose SnapFaktura
+**Because it's the only invoice-scanning tool that reads local invoices in Albanian and Macedonian, exports straight into the accounting programs local accountants already use, and costs less per month than one day of typing.**
 
 ---
 
@@ -133,47 +136,49 @@ The weakest numbers are the 40% and 50% assumptions and the architecture-studio 
 
 | | |
 |---|---|
-| **Problem** | 1. Disputes about changes ("I never asked for that"). 2. Delays nobody can explain or prove. 3. Clients, often abroad, constantly asking "how is it going?" |
-| **Customer segments** | Small and medium construction firms (5–50 workers) in Kosovo and North Macedonia. Architecture studios that supervise builds. **Early adopters:** firms building for diaspora clients |
-| **Unique value proposition** | Record your site in 2 minutes a day by voice, and get your client's approval on every change. Proof, not arguments |
-| **Solution** | Daily entries by photo and voice note, turned into structured entries by AI. Change requests with one-tap client approval. Automatic weekly PDF report for the client |
-| **Channels** | In-person visits to sites and firms, the DALT-Architects network, building material stores, architecture Facebook/Instagram groups, referrals from clients |
-| **Revenue streams** | Monthly subscription per firm (flat, unlimited users) |
-| **Cost structure** | Hosting, database, AI transcription, WhatsApp/email messages, domain, my time |
-| **Key metrics** | Active sites per week, % of days with an entry, changes approved by clients, firms paying after the free project |
-| **Unfair advantage** | Local language and on-site setup in person, plus direct access to architects and builders through DALT-Architects |
+| **Problem** | 1. Typing hundreds of invoices by hand every month. 2. Clients bring documents late, in bags, incomplete. 3. Typing mistakes and deadline stress |
+| **Customer segments** | Accounting offices that keep books for small businesses in Kosovo and North Macedonia. **Early adopters:** offices with 30+ business clients and young accountants open to AI |
+| **Unique value proposition** | Your clients photograph invoices, and you get them typed. Stop typing, start checking |
+| **Solution** | Phone upload link for each business. AI reads supplier, tax number, date, invoice number, amounts and VAT. A review screen with flagged fields. Export to Excel/CSV in the format of the accountant's program |
+| **Channels** | Visiting accounting offices in person, SCAAK/ISOS events and trainings, accountant Facebook groups, referrals between accountants, my AI training network |
+| **Revenue streams** | Monthly subscription per accounting office, priced by the number of documents |
+| **Cost structure** | AI (vision model) per document, hosting, database and file storage, email, domain, my time |
+| **Key metrics** | Documents processed per month, % of fields correct without edits, minutes saved per document, offices still paying after 3 months |
+| **Unfair advantage** | Local language and local invoice formats, exports built for local programs, setup in person, and my AI skills to keep improving accuracy |
 
 ### Price and why
 
-| Plan | Price | For |
-|---|---|---|
-| **Free first project** | €0 for 30 days, 1 site | So they can try it on a real project |
-| **SiteTrail** | **€39/month** per firm, up to 5 active sites, unlimited users | Most small builders |
-| **SiteTrail Pro** | **€69/month**, unlimited sites, firm logo on the reports | Bigger firms and architecture studios |
-| **Yearly** | 2 months free | Cash up front |
+| Plan | Price | Documents / month | For |
+|---|---|---|---|
+| **Free trial** | €0 for 30 days | up to 200 | Try it on a real month |
+| **Start** | **€29/month** | up to 500 | A single accountant |
+| **Office** | **€59/month** | up to 1,500 | Small accounting offices |
+| **Pro** | **€99/month** | up to 4,000 | Bigger offices |
+| Extra documents | €0.03 each | above the plan | Busy months |
 
-**Why monthly, flat per firm:**
-- Builders are afraid of paying "per user". Flat pricing means they invite everyone, including the client and the architect, and more users make the product more valuable.
-- €39 is much less than one dispute. If SiteTrail saves a single argument about a €500 change, it pays for a year.
-- It's far below PlanRadar or Fieldwire for a 6-person team (~€150–500/month).
+**Why monthly, priced by documents:**
+- Accountants think in documents and clients, not users. Pricing by volume is fair, and it grows with the office.
+- **The maths sells it:** 500 documents × ~1.5 minutes = ~12 hours saved for €29. That's less than €2.50 an hour, far cheaper than typing.
+- Unlimited users and unlimited client businesses, so the accountant can invite all their clients without thinking about cost.
+- Far below Dext's firm pricing, and comparable to Datamolino but built for local programs and languages.
 
 ### Monthly costs (first 10–30 customers)
 
 | Item | Estimate / month | Notes |
 |---|---|---|
+| AI (reading invoices) | ~€15–40 | ~10,000–20,000 documents at ~€0.002 each with a vision model; to measure |
 | Hosting (web app) | ~€20 | e.g. Vercel or Railway |
-| Database + file storage (photos) | ~€25 | e.g. Supabase Pro |
-| AI: speech-to-text + structuring | ~€10–20 | ~30 sites × 1 min/day of voice is cheap |
-| Email (reports, invites) | €0 | Free tier, e.g. Resend |
-| WhatsApp/SMS (approval links) | ~€10–20 | Pay per message. Start with email + link to keep it low |
-| Domain (sitetrail.app) | ~€1.5 | ~€15–20 per year |
-| **Total** | **~€70–90/month** | Break-even at **3 paying firms** |
+| Database + file storage (invoice photos) | ~€25 | e.g. Supabase Pro |
+| Email (upload links, reminders) | €0 | Free tier, e.g. Resend |
+| SMS / WhatsApp reminders | ~€0–15 | Start with email and links; add later |
+| Domain (snapfaktura.com) | ~€1.5 | ~€15 per year |
+| **Total** | **~€60–100/month** | Break-even at **2–3 paying offices** |
 
 These are estimates for planning; I'll check real prices when I choose the tools.
 
 ### How the first 10 customers will find me
-1. **DALT-Architects network:** ask for introductions to the contractors they work with (target: 3 firms).
-2. **Walking onto sites:** visit 20 active sites in Prishtina and nearby cities, talk to the site manager, offer a free first project (target: 3 firms).
-3. **Building material stores:** ask the owners of 5 stores to introduce me to their regular builders (target: 2 firms).
-4. **Facebook and Instagram groups** for architecture and construction in Kosovo and North Macedonia, with a short video of a voice note turning into a report (target: 1–2 firms).
-5. **Referrals from clients:** every weekly report sent to a client says "Made with SiteTrail", so the client becomes a salesperson for their next build (target: 1 firm).
+1. **Personal network and my AI training group:** ask everyone "who is your accountant?" and get introductions (target: 3 offices).
+2. **Walking into accounting offices** in Prishtina and nearby cities in the first week of the month, when the pain is highest, offering a free month (target: 3 offices).
+3. **Accountant Facebook and Viber groups** in Kosovo and North Macedonia, with a 30-second video showing a phone photo turning into an Excel row (target: 2 offices).
+4. **SCAAK / ISOS trainings and events:** accountants need continuing education hours, so offer a short talk on "AI for accountants" (target: 1–2 offices).
+5. **Referrals:** one free month for every accountant who brings another one (target: 1 office).
