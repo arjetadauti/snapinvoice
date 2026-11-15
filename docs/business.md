@@ -29,10 +29,17 @@ I talked to **two accountants** who enter invoices for small-business clients. T
 - **Program:** both use **WinGK** as their accounting program, so everything is typed by hand into WinGK.
 - **Working after hours:** sometimes they had to **take the company's computer home** to finish invoices over the **weekend**, because there weren't enough working hours during the week to get them all done.
 
-**In their words**
-> _Add one or two short sentences as close as possible to what they said, translated into English. For example, what they said about taking the computer home._
-> - "…" (Accountant 1)
-> - "…" (Accountant 2)
+**What each of them said** _(paraphrased from my interview notes and translated into English, not word-for-word quotes)_
+
+**Accountant 1**
+- Every month it takes 3–4 days just to type all the invoice documents, with all their data, into WinGK.
+- There isn't enough time in normal working hours to finish everything.
+- Sometimes they've had to take the company computer home to finish invoices over the weekend.
+
+**Accountant 2**
+- Their experience is the same: entering a month's invoices into WinGK takes 3–4 working days.
+- Everything is typed by hand, document by document, from the paper the clients bring.
+- When the work piles up, the invoices that aren't finished during the week get done at the weekend.
 
 ### How they work today (what they showed me)
 
