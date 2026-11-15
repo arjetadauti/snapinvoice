@@ -1,6 +1,6 @@
-# SnapFaktura — Business (parts 1–4)
+# SnapInvoice — Business (parts 1–4)
 
-> **SnapFaktura** lets small businesses photograph their invoices with a phone, and AI turns them into ready-to-import data for their accountant, so accountants stop typing invoices by hand.
+> **SnapInvoice** lets small businesses photograph their invoices with a phone, and AI turns them into ready-to-import data for their accountant, so accountants stop typing invoices by hand.
 
 ---
 
@@ -30,9 +30,24 @@ I talked to **two accountants** who enter invoices for small-business clients. T
 - **Working after hours:** sometimes they had to **take the company's computer home** to finish invoices over the **weekend**, because there weren't enough working hours during the week to get them all done.
 
 **In their words**
-> _Add one or two short sentences exactly as they said them, in Albanian, with an English translation. For example, what they said about taking the computer home._
+> _Add one or two short sentences as close as possible to what they said, translated into English. For example, what they said about taking the computer home._
 > - "…" (Accountant 1)
 > - "…" (Accountant 2)
+
+### How they work today (what they showed me)
+
+They showed me their real workflow on the office computer:
+
+- **The program:** WinGK (version 0.91), an older Windows desktop accounting program with a **Macedonian-language interface**. The main menus are Financial, Material (inventory), Code lists and System. At the top they choose the **company** (client) and the **year** they're working on.
+- **Many tabs open at once:** posting bank statements, updating business partners, account cards, analytics cards and the trial balance. They jump between them all day.
+- **Partners first:** before a supplier's invoice can be entered, the supplier has to exist as a **partner** in WinGK, with a partner code, name, price type, address, place, country, bank accounts and contacts. A new supplier means filling in this form by hand first.
+- **Paper next to the keyboard:** on the desk there was a pile of paper documents waiting to be typed in: supplier invoices, **handwritten delivery notes**, and printed **bank payment confirmations**. Every one of these is read by eye and typed in by hand.
+- **The entry table:** they also showed me a screen that looks like **Excel, with columns and rows**, where each document becomes a row of data. This is where most of the 3–4 days go.
+
+**What this means for SnapInvoice**
+- The export must produce **rows and columns in the same order as that WinGK table**, so they can import it or copy it in instead of typing. _Next step: write down the exact column names of that table._
+- SnapInvoice must **match each supplier to its WinGK partner code**, and show clearly when a supplier is new, so the accountant creates the partner once and SnapInvoice remembers it.
+- SnapInvoice must read **handwritten delivery notes and bank payment slips**, not only clean printed invoices.
 
 **What the interviews changed in my thinking**
 - The pain is bigger than I estimated: I guessed 2–4 days a month, and both said **3–4 days**, every month.
@@ -53,7 +68,7 @@ Businesses take a photo of each invoice, and their accountant gets the supplier,
 | **Also uses it, free** | The small business (the accountant's client): photographs invoices with their phone instead of collecting them in a bag |
 
 **Why now**
-- **AI can now read invoices** in Albanian, Macedonian (Cyrillic) and English, including photos taken on a phone, at a cost of fractions of a cent per invoice. A few years ago this needed expensive, rigid OCR templates.
+- **AI can now read invoices** written in local languages (Latin and Cyrillic script) and English, including photos taken on a phone, at a cost of fractions of a cent per invoice. A few years ago this needed expensive, rigid OCR templates.
 - **Tax systems are going digital.** Kosovo is moving from fiscal devices to Electronic Fiscal Software with fiscal QR codes ([fiscal-requirements.com](https://www.fiscal-requirements.com/countries/43-jurisdiction-of-kosovo)), and North Macedonia is preparing mandatory e-invoicing (draft law, phased from 2027) ([fiscal-requirements.com](https://www.fiscal-requirements.com/news/5054-north-macedonia-introduces-mandatory-real-time-e-invoicing-e-faktura)). Accountants know they must change how they work, so this is the moment they're open to new tools.
 - **Accountants are overloaded.** More registered businesses means more bookkeeping with the same number of people.
 
@@ -77,13 +92,13 @@ Prices were checked in November 2026 from public listings. Several aren't public
 
 | Competitor | Price | What it does well | Where it fails for an accountant in Kosovo/MK | Link |
 |---|---|---|---|---|
-| **Dext Prepare** (UK) | Sales-led; per-client tiers for accounting firms (third-party listings show ~£165+/month for firms) | The market leader in receipt and invoice capture for accountants | Built for Xero/QuickBooks/Sage, not local programs; priced for UK firms; no Albanian/Macedonian support | [dext.com](https://dext.com) |
+| **Dext Prepare** (UK) | Sales-led; per-client tiers for accounting firms (third-party listings show ~£165+/month for firms) | The market leader in receipt and invoice capture for accountants | Built for Xero/QuickBooks/Sage, not local programs; priced for UK firms; no support for local languages and invoice formats | [dext.com](https://dext.com) |
 | **Datamolino** (Slovakia) | ~$9–65/month depending on document volume (third-party listings) | Cheap, pay by volume, unlimited users | Integrates with Western programs, not Financa 5 / Alpha / Bilanc; English interface | [datamolino.com](https://www.datamolino.com) |
 | **Hubdoc** (Xero) | Included with Xero subscriptions | Free if you already use Xero | Only useful for Xero users, which local accountants mostly aren't | [hubdoc.com](https://www.hubdoc.com) |
 | **Odoo AI invoice capture** | Part of Odoo Enterprise (paid per user); Kosovo localisation module available | Full ERP with built-in AI scanning | Accountants would have to switch their whole program; expensive and complex for a small office | [odoo.com](https://www.odoo.com/app/accounting) |
 | **Do nothing:** typing by hand into WinGK / Financa 5 / Alpha / Bilanc / Excel | €0 extra (just the accountant's time) | Familiar, full control, no new tool | Days of typing every month, mistakes, deadline stress, can't take more clients | n/a |
 
-**Local accounting programs** (WinGK, which both accountants I interviewed use, plus Financa 5, Alpha, Bilanc and others) aren't competitors yet. They're where my data goes, so SnapFaktura must export in a format they can import. **Risk:** they could add AI scanning themselves. My answer is to be faster and to work with *all* of them, not just one.
+**Local accounting programs** (WinGK, which both accountants I interviewed use, plus Financa 5, Alpha, Bilanc and others) aren't competitors yet. They're where my data goes, so SnapInvoice must export in a format they can import. **Risk:** they could add AI scanning themselves. My answer is to be faster and to work with *all* of them, not just one.
 
 **What this tells me:** the idea is proven abroad (Dext and Datamolino are real businesses), but **nobody does it for local invoices, local languages and local accounting programs at local prices.**
 
@@ -113,10 +128,10 @@ The weakest numbers are the North Macedonia estimate and the 70% assumption. I'l
 ### The biggest risk: e-invoicing
 If North Macedonia's mandatory e-invoicing starts in 2027–2028, many **B2B invoices will arrive as digital files instead of paper**. That reduces the need for photos in the long term. My plan:
 - Receipts, fiscal coupons, foreign invoices and small suppliers will stay on paper for years, and Kosovo has no e-invoicing mandate yet.
-- SnapFaktura will also **import digital e-invoice files** (XML/PDF), so the accountant has one place for everything, paper or digital.
+- SnapInvoice will also **import digital e-invoice files** (XML/PDF), so the accountant has one place for everything, paper or digital.
 
-### Why a customer would choose SnapFaktura
-**Because it's the only invoice-scanning tool that reads local invoices in Albanian and Macedonian, exports straight into the accounting programs local accountants already use, and costs less per month than one day of typing.**
+### Why a customer would choose SnapInvoice
+**Because it's the only invoice-scanning tool that reads local invoices (Latin and Cyrillic), exports straight into the accounting programs local accountants already use, and costs less per month than one day of typing.**
 
 ---
 
@@ -134,7 +149,7 @@ If North Macedonia's mandatory e-invoicing starts in 2027–2028, many **B2B inv
 | **Revenue streams** | Monthly subscription per accounting office, priced by the number of documents |
 | **Cost structure** | AI (vision model) per document, hosting, database and file storage, email, domain, my time |
 | **Key metrics** | Documents processed per month, % of fields correct without edits, minutes saved per document, offices still paying after 3 months |
-| **Unfair advantage** | Local language and local invoice formats, exports built for local programs, setup in person, and my AI skills to keep improving accuracy |
+| **Unfair advantage** | Local invoice formats (including handwritten and Cyrillic documents), exports built for local programs, setup in person, and my AI skills to keep improving accuracy |
 
 ### Price and why
 
@@ -148,7 +163,7 @@ If North Macedonia's mandatory e-invoicing starts in 2027–2028, many **B2B inv
 
 **Why monthly, priced by documents:**
 - Accountants think in documents and clients, not users. Pricing by volume is fair, and it grows with the office.
-- **The maths sells it:** the accountants I interviewed lose 3–4 days a month. Even if SnapFaktura saves only half of that, it gives them back ~1.5–2 days, and their weekends, for €29–59 a month.
+- **The maths sells it:** the accountants I interviewed lose 3–4 days a month. Even if SnapInvoice saves only half of that, it gives them back ~1.5–2 days, and their weekends, for €29–59 a month.
 - Unlimited users and unlimited client businesses, so the accountant can invite all their clients without thinking about cost.
 - Far below Dext's firm pricing, and comparable to Datamolino but built for local programs and languages.
 
@@ -161,7 +176,7 @@ If North Macedonia's mandatory e-invoicing starts in 2027–2028, many **B2B inv
 | Database + file storage (invoice photos) | ~€25 | e.g. Supabase Pro |
 | Email (upload links, reminders) | €0 | Free tier, e.g. Resend |
 | SMS / WhatsApp reminders | ~€0–15 | Start with email and links; add later |
-| Domain (snapfaktura.com) | ~€1.5 | ~€15 per year |
+| Domain (snapinvoice.app) | ~€1.5 | ~€15–20 per year |
 | **Total** | **~€60–100/month** | Break-even at **2–3 paying offices** |
 
 These are estimates for planning; I'll check real prices when I choose the tools.

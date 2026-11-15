@@ -1,27 +1,25 @@
-# SnapFaktura — Brand book v1
+# SnapInvoice — Brand book v1
 
-![SnapFaktura brand board](brand/brand-board.svg)
+![SnapInvoice brand board](brand/brand-board.svg)
 
 ## Name
-**SnapFaktura** = **Snap** (take a quick photo) + **Faktura** (invoice).
+**SnapInvoice** = **Snap** (take a quick photo) + **Invoice**.
 
-- "Faktura" is understood on both sides of the border: in Kosovo people say *faturë* / *faktura*, and in North Macedonia *фактура*. Nobody feels the name "isn't for them".
-- "Snap" is a simple English word most young people know from phones and apps.
-- Together the name says exactly what the product does: **take a photo of the invoice, and it's done.**
+- It says exactly what the product does: **take a photo of the invoice, and the data is ready.**
+- It's in simple English, so it's neutral in every country and easy for accountants and business owners to remember.
 
 | Check | Result (15 Nov 2026) |
 |---|---|
-| **snapfaktura.com** | ✅ Looks free (no DNS record). Register it to confirm |
-| snapfaktura.app / snapfaktura.ai | ✅ Also look free (backups) |
-| Instagram **@snapfaktura** | ⚠️ Check by hand on instagram.com/snapfaktura |
+| snapinvoice.com | ❌ Taken |
+| **snapinvoice.app** | ✅ Looks free (no DNS record). Register it to confirm |
+| Instagram **@snapinvoice.app** | ⚠️ Check by hand on instagram.com/snapinvoice.app |
 
 ## Tagline
-- **Albanian:** *Fotografo faturën. Kontabilisti e ka gati.*
-- **English:** *Snap the invoice. Your accountant is done.*
-- **For accountants (sales):** *Mos shkruaj më fatura. Vetëm kontrollo.* ("Stop typing invoices. Just check them.")
+- **Main:** *Snap the invoice. Skip the typing.*
+- **For accountants (sales):** *Stop typing invoices. Just check them.*
 
 ## Logo
-A white invoice inside the four corners of a camera viewfinder: **the invoice being "snapped"**. It sits on a green rounded square, so it works as a phone icon. In the wordmark, "Snap" is in the text colour and "Faktura" is in green.
+A white invoice inside the four corners of a camera viewfinder: **the invoice being "snapped"**. It sits on a green rounded square, so it works as a phone icon. In the wordmark, "Snap" is in the text colour and "Invoice" is in green.
 
 | On light | On dark | Icon only |
 |---|---|---|
@@ -29,7 +27,7 @@ A white invoice inside the four corners of a camera viewfinder: **the invoice be
 
 Files: [`brand/logo-light.svg`](brand/logo-light.svg), [`brand/logo-dark.svg`](brand/logo-dark.svg), [`brand/logo-icon.svg`](brand/logo-icon.svg).
 
-**Rules:** keep space around the logo at least as wide as one viewfinder corner. Don't stretch it, recolour the icon or put it on a busy photo. On dark backgrounds, "Faktura" uses the lighter green `#3FBF8F` so it stays readable.
+**Rules:** keep space around the logo at least as wide as one viewfinder corner. Don't stretch it, recolour the icon or put it on a busy photo. On dark backgrounds, "Invoice" uses the lighter green `#3FBF8F` so it stays readable.
 
 ## Colours
 
@@ -42,10 +40,8 @@ Files: [`brand/logo-light.svg`](brand/logo-light.svg), [`brand/logo-dark.svg`](b
 In the app, fields the AI isn't sure about use a warning orange, which is a functional colour, not a brand colour.
 
 ## Fonts
-- **Space Grotesk** (Bold 700): headings and the logo. Modern and a little technical, which suits AI.
-- **Inter** (Regular 400 / Semibold 600): all body text, tables and **numbers**. Its tabular numbers line up in columns, which matters for accountants. Supports Albanian (ë, ç) and Macedonian Cyrillic. [Google Fonts](https://fonts.google.com/specimen/Inter)
-
-[Space Grotesk on Google Fonts](https://fonts.google.com/specimen/Space+Grotesk)
+- **Space Grotesk** (Bold 700): headings and the logo. Modern and a little technical, which suits AI. [Google Fonts](https://fonts.google.com/specimen/Space+Grotesk)
+- **Inter** (Regular 400 / Semibold 600): all body text, tables and **numbers**. Its tabular numbers line up in columns, which matters for accountants. It also supports Latin and Cyrillic characters, so supplier names on invoices display correctly. [Google Fonts](https://fonts.google.com/specimen/Inter)
 
 ## Tone of voice: **Clear · Precise · Calm**
 We talk like a good accountant: exact, no exaggeration, and calm even at deadline time. We never promise "100% automatic". We say the AI does the typing and the accountant stays in control.

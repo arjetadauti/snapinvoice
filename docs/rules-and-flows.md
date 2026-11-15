@@ -1,4 +1,4 @@
-# SnapFaktura — Business rules and flows (part 6)
+# SnapInvoice — Business rules and flows (part 6)
 
 ## Users and roles
 
@@ -7,18 +7,18 @@
 | **Office owner** | Owner of the accounting office; the paying customer | Create the office account, add accountants, add client businesses, see everything, review and export, manage the subscription | Change a month that is already exported and locked (without unlocking it, which is logged) |
 | **Accountant** | Staff in the office | See the client businesses assigned to them, review and correct documents, export months | See clients not assigned to them, manage billing, delete the office |
 | **Business client** | The small business that the office keeps books for | Upload invoice and receipt photos or PDFs through their link, see what they've uploaded and its status, answer the accountant's questions on a document | See or change the extracted numbers, see other businesses, export anything |
-| **SnapFaktura admin** | Me / the SnapFaktura team | Support, fix accounts, see usage numbers | Open invoices or client data without the office owner's permission |
+| **SnapInvoice admin** | Me / the SnapInvoice team | Support, fix accounts, see usage numbers | Open invoices or client data without the office owner's permission |
 
 ---
 
 ## The three most important flows
 
 ### Flow 1: Sign up and add a client business
-1. The office owner opens snapfaktura.com and signs up with name, email, phone and office name.
+1. The office owner opens snapinvoice.app and signs up with name, email, phone and office name.
 2. They confirm their email.
 3. They choose their accounting program (e.g. WinGK, Financa 5, Alpha, Bilanc, other / Excel). WinGK is first, because the accountants I interviewed use it, which sets the export format.
-4. They add a client business: business name, tax number (NUI/ЕДБ), VAT registered yes/no, contact phone/email.
-5. SnapFaktura creates a **personal upload link** for that business, and the owner sends it by email, Viber or WhatsApp (or shows a QR code in the office).
+4. They add a client business: business name, tax number (NUI in Kosovo / EDB in North Macedonia), VAT registered yes/no, contact phone/email.
+5. SnapInvoice creates a **personal upload link** for that business, and the owner sends it by email, Viber or WhatsApp (or shows a QR code in the office).
 6. The free 30-day trial starts (up to 200 documents).
 7. On day 25 the owner gets a reminder to choose a plan. If they don't pay by day 30, uploads stop, but existing data stays and can still be exported.
 
@@ -26,7 +26,7 @@
 1. The business owner opens their upload link on their phone (no password: the link is personal and can be reset by the accountant).
 2. They tap **Take photo** (or choose a PDF/photo from the phone). Several pages or documents can be added at once.
 3. They see a preview, can retake a blurry photo, and tap **Send**.
-4. SnapFaktura confirms "Received: 3 documents for November", and the documents go to the accountant's queue for that business and month.
+4. SnapInvoice confirms "Received: 3 documents for November", and the documents go to the accountant's queue for that business and month.
 5. Around the 3rd of every month, the business gets an automatic reminder: "Send the rest of last month's invoices to your accountant."
 
 ### Flow 3: AI reads it, the accountant checks and exports
@@ -49,11 +49,12 @@
 5. **Duplicates are blocked.** If a document has the same supplier tax number, invoice number and total as one already uploaded for that business, it's marked "possible duplicate" and isn't exported twice.
 6. **A month is locked after export.** Changes need the office owner to unlock it. Every unlock is logged with who, when and why.
 7. **Businesses only see their own uploads** and never the extracted numbers, other businesses or the office's notes.
-8. **Original photos are never edited or deleted by the AI.** Corrections change only the extracted data; the original image stays attached to the document.
-9. **Pricing counts documents, not pages.** A three-page invoice is one document. Unused documents don't roll over to the next month.
-10. **Data belongs to the accounting office.** It can export everything (data + original images) at any time. If the subscription ends, data is kept for 12 months in read-only mode, then deleted after a warning by email. Keeping documents for the legally required period is still the office's responsibility.
-11. **Cancelling stops the next payment.** The account stays active until the end of the paid month. No refunds for partial months.
-12. **Upload links can be reset.** If a business link is shared by mistake, the accountant resets it and the old link stops working immediately.
+8. **Every supplier is matched to a partner code** from the accountant's program (e.g. the WinGK partner code). A supplier that isn't matched yet is marked **New partner**, and once the accountant links it, SnapInvoice remembers it for all future documents.
+9. **Original photos are never edited or deleted by the AI.** Corrections change only the extracted data; the original image stays attached to the document.
+10. **Pricing counts documents, not pages.** A three-page invoice is one document. Unused documents don't roll over to the next month.
+11. **Data belongs to the accounting office.** It can export everything (data + original images) at any time. If the subscription ends, data is kept for 12 months in read-only mode, then deleted after a warning by email. Keeping documents for the legally required period is still the office's responsibility.
+12. **Cancelling stops the next payment.** The account stays active until the end of the paid month. No refunds for partial months.
+13. **Upload links can be reset.** If a business link is shared by mistake, the accountant resets it and the old link stops working immediately.
 
 ---
 
@@ -66,4 +67,4 @@
 - No **bank statements**.
 - No **e-invoice XML import** yet: planned for when North Macedonia's e-invoicing becomes mandatory.
 - No **payments to suppliers**.
-- No **languages other than Albanian, Macedonian and English** for the interface.
+- No **interface languages other than English** (the AI still reads documents written in local languages).

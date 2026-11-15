@@ -1,8 +1,8 @@
-<img src="docs/brand/logo-icon.svg" width="64" alt="SnapFaktura logo">
+<img src="docs/brand/logo-icon.svg" width="64" alt="SnapInvoice logo">
 
-# SnapFaktura
+# SnapInvoice
 
-**SnapFaktura lets small businesses photograph their invoices with a phone, and AI turns them into ready-to-import data for their accountant, so accountants stop typing invoices by hand.**
+**SnapInvoice lets small businesses photograph their invoices with a phone, and AI turns them into ready-to-import data for their accountant, so accountants stop typing invoices by hand.**
 
 For accounting offices and their small-business clients in Kosovo and North Macedonia.
 
