@@ -16,7 +16,7 @@
 ### Flow 1: Sign up and add a client business
 1. The office owner opens snapfaktura.com and signs up with name, email, phone and office name.
 2. They confirm their email.
-3. They choose their accounting program (e.g. Financa 5, Alpha, Bilanc, other / Excel), which sets the export format.
+3. They choose their accounting program (e.g. WinGK, Financa 5, Alpha, Bilanc, other / Excel). WinGK is first, because the accountants I interviewed use it, which sets the export format.
 4. They add a client business: business name, tax number (NUI/ЕДБ), VAT registered yes/no, contact phone/email.
 5. SnapFaktura creates a **personal upload link** for that business, and the owner sends it by email, Viber or WhatsApp (or shows a QR code in the office).
 6. The free 30-day trial starts (up to 200 documents).

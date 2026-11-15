@@ -16,38 +16,28 @@ Accountants in Kosovo and North Macedonia who keep the books for small businesse
 - When an accountant can't take on more clients because the data entry has no room left.
 
 **What it costs today**
-- **Time:** if one invoice takes ~1–2 minutes to type, 1,000 invoices a month means **~17–33 hours**, or 2–4 full working days. _(Estimate, to confirm in the interviews.)_
+- **Time:** both accountants I interviewed spend **3–4 working days every month** typing invoices into their accounting program (WinGK).
 - **Money:** those hours could be spent on more clients or better-paid advisory work.
-- **Stress:** late nights before deadlines, chasing clients for missing documents, and the risk of fines for the client if something is wrong.
+- **Stress:** working at weekends (they take the office computer home to finish), late nights before deadlines, chasing clients for missing documents, and the risk of fines for the client if something is wrong.
 
 ### Interviews (in their own words)
 
-> ⚠️ **TO FILL IN WITH REAL INTERVIEWS. Do not hand in with placeholder text.**
+I talked to **two accountants** who enter invoices for small-business clients. They described the same situation, almost in the same way.
 
-**Interview 1: Accountant**
-- Who: _role, size of office, number of client businesses, city_
-- Date and format: _in person / phone / voice messages_
-- Quotes, word for word (Albanian is fine, add an English translation):
-  - "…"
-  - "…"
-  - "…"
-- How many invoices a month, and how long one takes to enter:
-- Which accounting program they use:
-- Biggest pain:
-- What surprised me:
+**What they told me (summary of both)**
+- **Time:** entering all the invoice documents for the month, with all the data, into their accounting program takes them **3–4 days every month**.
+- **Program:** both use **WinGK** as their accounting program, so everything is typed by hand into WinGK.
+- **Working after hours:** sometimes they had to **take the company's computer home** to finish invoices over the **weekend**, because there weren't enough working hours during the week to get them all done.
 
-**Interview 2: Small business owner (the accountant's client) or a second accountant**
-- Who:
-- Date and format:
-- Quotes, word for word:
-  - "…"
-  - "…"
-  - "…"
-- How they give documents to the accountant today:
-- Biggest pain:
-- What surprised me:
+**In their words**
+> _Add one or two short sentences exactly as they said them, in Albanian, with an English translation. For example, what they said about taking the computer home._
+> - "…" (Accountant 1)
+> - "…" (Accountant 2)
 
-**What the interviews changed in my thinking:** _one or two sentences_
+**What the interviews changed in my thinking**
+- The pain is bigger than I estimated: I guessed 2–4 days a month, and both said **3–4 days**, every month.
+- The pain isn't only time at work, it's **their weekends and their personal life**. Taking the work computer home is a strong sign that this hurts and that they'd pay to fix it.
+- **WinGK** is the program my first customers use, so the first export format must be one that **WinGK can import**. I need to find out exactly which import format (Excel/CSV columns) WinGK accepts.
 
 ---
 
@@ -91,9 +81,9 @@ Prices were checked in November 2026 from public listings. Several aren't public
 | **Datamolino** (Slovakia) | ~$9–65/month depending on document volume (third-party listings) | Cheap, pay by volume, unlimited users | Integrates with Western programs, not Financa 5 / Alpha / Bilanc; English interface | [datamolino.com](https://www.datamolino.com) |
 | **Hubdoc** (Xero) | Included with Xero subscriptions | Free if you already use Xero | Only useful for Xero users, which local accountants mostly aren't | [hubdoc.com](https://www.hubdoc.com) |
 | **Odoo AI invoice capture** | Part of Odoo Enterprise (paid per user); Kosovo localisation module available | Full ERP with built-in AI scanning | Accountants would have to switch their whole program; expensive and complex for a small office | [odoo.com](https://www.odoo.com/app/accounting) |
-| **Do nothing:** typing by hand into Financa 5 / Alpha / Bilanc / Excel | €0 extra (just the accountant's time) | Familiar, full control, no new tool | Days of typing every month, mistakes, deadline stress, can't take more clients | n/a |
+| **Do nothing:** typing by hand into WinGK / Financa 5 / Alpha / Bilanc / Excel | €0 extra (just the accountant's time) | Familiar, full control, no new tool | Days of typing every month, mistakes, deadline stress, can't take more clients | n/a |
 
-**Local accounting programs** (Financa 5, Alpha, Bilanc and others) aren't competitors yet. They're where my data goes, so SnapFaktura must export in a format they can import. **Risk:** they could add AI scanning themselves. My answer is to be faster and to work with *all* of them, not just one.
+**Local accounting programs** (WinGK, which both accountants I interviewed use, plus Financa 5, Alpha, Bilanc and others) aren't competitors yet. They're where my data goes, so SnapFaktura must export in a format they can import. **Risk:** they could add AI scanning themselves. My answer is to be faster and to work with *all* of them, not just one.
 
 **What this tells me:** the idea is proven abroad (Dext and Datamolino are real businesses), but **nobody does it for local invoices, local languages and local accounting programs at local prices.**
 
@@ -158,7 +148,7 @@ If North Macedonia's mandatory e-invoicing starts in 2027–2028, many **B2B inv
 
 **Why monthly, priced by documents:**
 - Accountants think in documents and clients, not users. Pricing by volume is fair, and it grows with the office.
-- **The maths sells it:** 500 documents × ~1.5 minutes = ~12 hours saved for €29. That's less than €2.50 an hour, far cheaper than typing.
+- **The maths sells it:** the accountants I interviewed lose 3–4 days a month. Even if SnapFaktura saves only half of that, it gives them back ~1.5–2 days, and their weekends, for €29–59 a month.
 - Unlimited users and unlimited client businesses, so the accountant can invite all their clients without thinking about cost.
 - Far below Dext's firm pricing, and comparable to Datamolino but built for local programs and languages.
 
