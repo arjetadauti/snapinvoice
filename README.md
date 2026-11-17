@@ -8,13 +8,15 @@ For accounting offices and their small-business clients in Kosovo and North Mace
 
 ## Start the project (3 commands)
 
-You need [Node.js](https://nodejs.org) 20.19 or newer.
+You need [Git](https://git-scm.com) and [Node.js](https://nodejs.org) 20.19 or newer. The commands work in PowerShell, macOS Terminal and Linux.
 
 ```bash
-git clone https://github.com/arjetadauti/snapinvoice.git && cd snapinvoice
+git clone https://github.com/arjetadauti/snapinvoice.git; cd snapinvoice
 npm install
 npm run dev
 ```
+
+**Windows:** if `npm` says "running scripts is disabled on this system", run `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned` once, then try again.
 
 - Landing page: http://localhost:5173
 - Back end health check: http://localhost:3000/health (answers `{"status":"ok","database":"ok"}`)
