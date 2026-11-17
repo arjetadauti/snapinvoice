@@ -1,0 +1,28 @@
+{
+  "name": "@snapinvoice/api",
+  "version": "1.0.0",
+  "description": "SnapInvoice back end: Express + Prisma + SQLite",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "db:migrate": "prisma migrate deploy",
+    "db:migrate:new": "prisma migrate dev",
+    "db:studio": "prisma studio",
+    "postinstall": "prisma generate"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.19.3",
+    "express": "^5.3.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.6",
+    "prisma": "^6.19.3",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  },
+  "private": true,
+  "type": "module"
+}

@@ -1,0 +1,320 @@
+// SnapInvoice data model.
+// Source of truth for the rules: ../../docs/rules-and-flows.md
+// Diagram and explanation: ../../docs/data-model.md
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// One SQLite file, kept out of git (see .gitignore).
+// The path is relative to this file: api/prisma/snapinvoice.db
+datasource db {
+  provider = "sqlite"
+  url      = "file:./snapinvoice.db"
+}
+
+// ---------- Enums ----------
+
+enum Country {
+  XK // Kosovo
+  MK // North Macedonia
+}
+
+enum AccountingProgram {
+  WINGK
+  FINANCA5
+  ALPHA
+  BILANC
+  OTHER_EXCEL
+}
+
+enum Role {
+  OWNER // office owner, the paying customer
+  ACCOUNTANT // office staff, sees only assigned client businesses
+}
+
+enum Plan {
+  TRIAL // 30 days, up to 200 documents
+  START // €29, up to 500 documents
+  OFFICE // €59, up to 1,500 documents
+  PRO // €99, up to 4,000 documents
+}
+
+enum SubscriptionStatus {
+  TRIALING
+  ACTIVE
+  CANCELLED // stays usable until currentPeriodEnd, no partial refunds
+  EXPIRED // uploads stop, data read-only for 12 months
+}
+
+enum PeriodStatus {
+  OPEN
+  LOCKED // locked after export; only the owner can unlock (logged)
+}
+
+enum DocumentType {
+  INVOICE
+  RECEIPT // receipt / fiscal coupon
+  CREDIT_NOTE
+  OTHER
+}
+
+enum DocumentStatus {
+  PROCESSING // uploaded, AI is reading it
+  NEEDS_REVIEW // AI done, waiting for the accountant
+  WAITING_FOR_CLIENT // accountant asked the client a question
+  APPROVED // checked by a human, can be exported
+  DUPLICATE // same supplier tax number + invoice number + total already exists
+  FAILED // AI could not read it
+}
+
+// ---------- Office and people ----------
+
+model Office {
+  id                String            @id @default(cuid())
+  name              String
+  email             String
+  phone             String?
+  country           Country
+  accountingProgram AccountingProgram
+  createdAt         DateTime          @default(now())
+
+  users        User[]
+  subscription Subscription?
+  clients      ClientBusiness[]
+  auditLogs    AuditLog[]
+}
+
+model User {
+  id              String    @id @default(cuid())
+  officeId        String
+  name            String
+  email           String    @unique
+  passwordHash    String
+  role            Role
+  emailVerifiedAt DateTime?
+  createdAt       DateTime  @default(now())
+
+  office            Office           @relation(fields: [officeId], references: [id], onDelete: Cascade)
+  assignments       Assignment[]
+  approvedDocuments Document[]       @relation("ApprovedBy")
+  questions         ClientQuestion[]
+  exports           Export[]
+  uploadLinks       UploadLink[]
+  auditLogs         AuditLog[]
+
+  @@index([officeId])
+}
+
+// Billing: one subscription per office. Pricing counts documents, not pages.
+model Subscription {
+  id               String             @id @default(cuid())
+  officeId         String             @unique
+  plan             Plan               @default(TRIAL)
+  status           SubscriptionStatus @default(TRIALING)
+  documentLimit    Int                @default(200)
+  trialEndsAt      DateTime?
+  currentPeriodEnd DateTime?
+  cancelledAt      DateTime?
+  createdAt        DateTime           @default(now())
+
+  office Office @relation(fields: [officeId], references: [id], onDelete: Cascade)
+}
+
+// ---------- Client businesses ----------
+
+// The small business the office keeps books for. It never logs in:
+// it uploads through its personal UploadLink.
+model ClientBusiness {
+  id            String   @id @default(cuid())
+  officeId      String
+  name          String
+  taxNumber     String // NUI (Kosovo) or EDB (North Macedonia)
+  vatRegistered Boolean  @default(false)
+  contactPhone  String?
+  contactEmail  String?
+  createdAt     DateTime @default(now())
+
+  office      Office       @relation(fields: [officeId], references: [id], onDelete: Cascade)
+  assignments Assignment[]
+  uploadLinks UploadLink[]
+  partners    Partner[]
+  periods     Period[]
+  documents   Document[]
+
+  @@unique([officeId, taxNumber])
+}
+
+// Which accountant may see which client business.
+model Assignment {
+  userId           String
+  clientBusinessId String
+  createdAt        DateTime @default(now())
+
+  user           User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  clientBusiness ClientBusiness @relation(fields: [clientBusinessId], references: [id], onDelete: Cascade)
+
+  @@id([userId, clientBusinessId])
+}
+
+// Personal upload link (no password). Resetting = revoke the old one, create a new one.
+model UploadLink {
+  id               String    @id @default(cuid())
+  clientBusinessId String
+  token            String    @unique
+  createdById      String
+  createdAt        DateTime  @default(now())
+  revokedAt        DateTime? // null = active
+
+  clientBusiness ClientBusiness @relation(fields: [clientBusinessId], references: [id], onDelete: Cascade)
+  createdBy      User           @relation(fields: [createdById], references: [id])
+  documents      Document[]
+
+  @@index([clientBusinessId])
+}
+
+// A supplier of a client business, matched to its partner code in the
+// accounting program (e.g. WinGK). partnerCode null = "New partner".
+model Partner {
+  id               String   @id @default(cuid())
+  clientBusinessId String
+  name             String
+  taxNumber        String
+  partnerCode      String?
+  createdAt        DateTime @default(now())
+
+  clientBusiness ClientBusiness @relation(fields: [clientBusinessId], references: [id], onDelete: Cascade)
+  documents      Document[]
+
+  @@unique([clientBusinessId, taxNumber])
+}
+
+// ---------- Months, documents and exports ----------
+
+// One bookkeeping month of one client business.
+model Period {
+  id               String       @id @default(cuid())
+  clientBusinessId String
+  year             Int
+  month            Int // 1-12
+  status           PeriodStatus @default(OPEN)
+  lockedAt         DateTime?
+
+  clientBusiness ClientBusiness @relation(fields: [clientBusinessId], references: [id], onDelete: Cascade)
+  documents      Document[]
+  exports        Export[]
+
+  @@unique([clientBusinessId, year, month])
+}
+
+// One document (one invoice/receipt), possibly with several pages.
+// Belongs to exactly one business and one month.
+model Document {
+  id               String         @id @default(cuid())
+  clientBusinessId String
+  periodId         String
+  uploadLinkId     String?
+  partnerId        String?
+  type             DocumentType   @default(INVOICE)
+  status           DocumentStatus @default(PROCESSING)
+
+  // Header fields read by AI and corrected by the accountant.
+  supplierName      String?
+  supplierTaxNumber String?
+  invoiceNumber     String?
+  invoiceDate       DateTime?
+  netAmount         Decimal?
+  vatAmount         Decimal?
+  totalAmount       Decimal?
+  currency          String? // EUR, MKD, ...
+  fieldConfidence   String? // JSON: { "totalAmount": 0.62, ... }; low = orange
+
+  duplicateOfId String?
+  approvedById  String?
+  approvedAt    DateTime?
+  uploadedAt    DateTime  @default(now())
+
+  clientBusiness ClientBusiness   @relation(fields: [clientBusinessId], references: [id], onDelete: Cascade)
+  period         Period           @relation(fields: [periodId], references: [id])
+  uploadLink     UploadLink?      @relation(fields: [uploadLinkId], references: [id])
+  partner        Partner?         @relation(fields: [partnerId], references: [id])
+  duplicateOf    Document?        @relation("Duplicates", fields: [duplicateOfId], references: [id])
+  duplicates     Document[]       @relation("Duplicates")
+  approvedBy     User?            @relation("ApprovedBy", fields: [approvedById], references: [id])
+  pages          DocumentPage[]
+  vatLines       VatLine[]
+  questions      ClientQuestion[]
+
+  @@index([clientBusinessId, periodId])
+  @@index([supplierTaxNumber, invoiceNumber])
+}
+
+// The original photo/PDF of one page. Never edited by AI or corrections.
+model DocumentPage {
+  id         String   @id @default(cuid())
+  documentId String
+  pageNumber Int
+  filePath   String
+  mimeType   String
+  createdAt  DateTime @default(now())
+
+  document Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+
+  @@unique([documentId, pageNumber])
+}
+
+// An invoice can have more than one VAT rate (e.g. 18% and 8%).
+model VatLine {
+  id         String  @id @default(cuid())
+  documentId String
+  rate       Decimal // e.g. 18.00
+  baseAmount Decimal
+  vatAmount  Decimal
+
+  document Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+}
+
+// "Ask client": the accountant asks about one document, the business answers.
+model ClientQuestion {
+  id         String    @id @default(cuid())
+  documentId String
+  askedById  String
+  message    String
+  answer     String?
+  createdAt  DateTime  @default(now())
+  answeredAt DateTime?
+
+  document Document @relation(fields: [documentId], references: [id], onDelete: Cascade)
+  askedBy  User     @relation(fields: [askedById], references: [id])
+}
+
+// One export file of one month, in the office's accounting program format.
+model Export {
+  id            String   @id @default(cuid())
+  periodId      String
+  createdById   String
+  format        String // e.g. "WINGK_XLSX", "CSV"
+  filePath      String
+  documentCount Int
+  createdAt     DateTime @default(now())
+
+  period    Period @relation(fields: [periodId], references: [id])
+  createdBy User   @relation(fields: [createdById], references: [id])
+}
+
+// Who did what and why: month unlocks, link resets, deletions.
+model AuditLog {
+  id         String   @id @default(cuid())
+  officeId   String
+  userId     String?
+  action     String // e.g. "PERIOD_UNLOCKED", "UPLOAD_LINK_RESET"
+  entityType String
+  entityId   String
+  reason     String?
+  createdAt  DateTime @default(now())
+
+  office Office @relation(fields: [officeId], references: [id], onDelete: Cascade)
+  user   User?  @relation(fields: [userId], references: [id])
+
+  @@index([officeId, createdAt])
+}

@@ -1,0 +1,23 @@
+{
+  "name": "snapinvoice",
+  "private": true,
+  "description": "SnapInvoice: phone photos of invoices become ready-to-import data for accountants.",
+  "workspaces": [
+    "api",
+    "web"
+  ],
+  "engines": {
+    "node": ">=20.19"
+  },
+  "scripts": {
+    "postinstall": "npm run db:migrate",
+    "dev": "concurrently -k -n api,web -c green,blue \"npm run dev -w @snapinvoice/api\" \"npm run dev -w @snapinvoice/web\"",
+    "build": "npm run build -w @snapinvoice/api && npm run build -w @snapinvoice/web",
+    "typecheck": "npm run typecheck -w @snapinvoice/api && npm run build -w @snapinvoice/web",
+    "db:migrate": "npm run db:migrate -w @snapinvoice/api",
+    "db:studio": "npm run db:studio -w @snapinvoice/api"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.7"
+  }
+}
